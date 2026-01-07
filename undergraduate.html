@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation Lab</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">RoboArm Academy</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="undergraduate.html" class="active">Simulation Lab</a></li>
+            <li><a href="primary.html">Sensors</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="card">
+            <h2>2-Link Planar Robot Arm Simulator</h2>
+            <p>Adjust the joint angles (Theta) to move the robot. Try to reach the red target!</p>
+            
+            <div id="simulation-area">
+                <canvas id="robotCanvas" width="500" height="400"></canvas>
+                
+                <div class="controls">
+                    <div class="slider-group">
+                        <label for="theta1">Joint 1 Angle (\(\theta_1\)): <span id="val1">0</span>°</label>
+                        <input type="range" id="theta1" min="-90" max="180" value="45">
+                    </div>
+                    
+                    <div class="slider-group">
+                        <label for="theta2">Joint 2 Angle (\(\theta_2\)): <span id="val2">0</span>°</label>
+                        <input type="range" id="theta2" min="-180" max="180" value="45">
+                    </div>
+
+                    <div class="math-display">
+                        <strong>End Effector Position:</strong><br><br>
+                        X = <span id="posX">0.00</span><br>
+                        Y = <span id="posY">0.00</span>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <h3>Mini Challenge:</h3>
+                        <p>Can you make the blue gripper touch the red dot?</p>
+                        <p id="status-msg" style="color:red; font-weight:bold;">Status: Missed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+  
+    <script src="js/undergraduate.js"></script>
+</body>
+</html>

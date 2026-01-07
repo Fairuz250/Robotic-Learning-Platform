@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Sensors Laboratory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">RoboArm Academy</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="undergraduate.html">Simulation Lab</a></li>
+            <li><a href="primary.html" class="active">Sensors</a></li> 
+        </ul>
+    </nav>
+
+    <main>
+        <div class="card" style="text-align: center;">
+            <h1>Robot Sensors Laboratory</h1>
+            <p>Explore three common types of sensors below!</p>
+        </div>
+
+        <div class="card">
+            <h2>1. The Touch Sensor (Bumper)</h2>
+            <p>The simplest sensor. It only knows two things: "Pressed" or "Not Pressed".</p>
+            <div class="sensor-box">
+                <div>
+                    <p><strong>Try it:</strong> Click and hold the bumper!</p>
+                    <button id="bumper-btn">ROBOT BUMPER</button>
+                </div>
+                <div>
+                   Status: <span id="touch-status">CLEAR</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>2. The Ultrasonic Sensor (Distance)</h2>
+            <p>Like a bat using echolocation. It times how long sound takes to bounce back.</p>
+            <div style="background: #f1f5f9; padding: 20px; border-radius: 8px;">
+                <label for="distanceSlider">Move the Wall:</label>
+                <input type="range" id="distanceSlider" min="10" max="280" value="150" style="width: 100%; margin-bottom: 20px;">
+                <canvas id="ultrasonicCanvas" width="500" height="150" style="background: white; border: 2px solid #333; border-radius: 4px;"></canvas>
+                <p>Reading: <strong style="color: var(--primary);"><span id="distanceOutput">150</span> cm</strong></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>3. The Light Sensor (Photoresistor)</h2>
+            <p>Changes electrical resistance based on how much light hits it.</p>
+            <div style="background: #f1f5f9; padding: 20px; border-radius: 8px; text-align: center;">
+                <input type="range" id="lightSlider" min="0" max="100" value="10" style="width: 80%;">
+                <br>
+                <label>Brightness: <span id="lightPercent">10</span>%</label>
+
+                <div style="display: flex; justify-content: space-around; align-items: center; margin-top: 20px;">
+                    <div>
+                        <p>Sensor View:</p>
+                        <div id="sensorView" class="sensor-bulb"></div>
+                    </div>
+                    <div class="math-display" style="text-align: left;">
+                        RAW DATA:<br>
+                        Value: <span id="lightValue">102</span> / 1023<br>
+                        Status: <span id="lightStatus">It's Dark</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/primary.js"></script>
+</body>
+</html>
